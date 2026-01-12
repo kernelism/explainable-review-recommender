@@ -1,5 +1,5 @@
 data:
-  raw_csv: "data/raw/reviews.csv"
+  raw_csv: "/kaggle/input/amazon-us-customer-reviews-dataset/amazon_reviews_us_Electronics_v1_00.tsv"
   processed_dir: "data/processed"
   min_user_reviews: 2
   min_item_reviews: 2
