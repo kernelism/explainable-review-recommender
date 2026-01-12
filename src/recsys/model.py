@@ -40,7 +40,8 @@ def train_two_tower(
     mixed_precision: str = "fp16"
 ) -> TwoTowerArtifacts:
     model = SentenceTransformer(model_name, device="cuda" if torch.cuda.is_available() else "cpu")
-    train_loss = losses.MultipleNegativesRankingLoss(model)  # positive pairs; negatives are other batch items [web:40] conceptually
+    print(f"Training on device: {model.device}")
+    train_loss = losses.MultipleNegativesRankingLoss(model)
 
     loader = NoDuplicatesDataLoader(train_examples, batch_size=batch_size)
 
