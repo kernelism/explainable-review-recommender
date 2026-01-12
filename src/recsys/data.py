@@ -18,7 +18,7 @@ def _clean_text(x: str) -> str:
     return x
 
 def load_raw(csv_path: str) -> pd.DataFrame:
-    df = pd.read_csv(csv_path, sep="\t", dtype=str, low_memory=False)
+    df = pd.read_csv(csv_path, sep="\t", dtype=str, low_memory=False, on_bad_lines="skip")
     missing = [c for c in REQUIRED_COLS if c not in df.columns]
     if missing:
         raise ValueError(f"Missing required columns: {missing}. Found: {list(df.columns)}")
