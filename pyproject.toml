@@ -1,0 +1,30 @@
+[project]
+name = "product-rec"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "arjun",email = "contactarjhun@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+]
+
+[tool.poetry]
+
+[tool.poetry.group.dev.dependencies]
+pandas = "2.2.3"
+numpy = "1.26.4"
+scikit-learn = "1.5.2"
+tqdm = "4.67.1"
+pyyaml = "6.0.2"
+torch = "2.5.1"
+sentence-transformers = "3.3.1"
+faiss-gpu = "1.7.2"
+fastapi = "0.115.6"
+uvicorn = "0.34.0"
+pydantic = "2.10.4"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

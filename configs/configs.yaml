@@ -1,0 +1,29 @@
+data:
+  raw_csv: "data/raw/reviews.csv"
+  processed_dir: "data/processed"
+  min_user_reviews: 2
+  min_item_reviews: 2
+  max_user_doc_chars: 12000
+  max_item_doc_chars: 12000
+  test_days: 30
+
+train:
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"
+  batch_size: 64
+  epochs: 1
+  lr: 2.0e-5
+  warmup_ratio: 0.1
+  mixed_precision: "fp16"
+
+eval:
+  k_list: [5, 10, 20]
+  candidate_items_per_user: 5000
+
+index:
+  metric: "ip"          # inner product
+  use_gpu: true
+
+serve:
+  host: "0.0.0.0"
+  port: 8000
+  top_k: 10
